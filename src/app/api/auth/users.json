@@ -1,0 +1,23 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "email": "zanaprivate30@gmail.com",
+      "password": "$2b$10$Re64I/A5xBjx6bFmDqAS3u6iUaMGcfQHTvAgJyW1qGNcXyC/SOUhS",
+      "name": "zanasanandaji"
+    },
+    {
+      "id": "2",
+      "email": "khashaiar@gmail.com",
+      "password": "$2b$10$Wy/1yWZUH9U.SnfPDRbM5OSABh0WJxZsJOdWZ2JID0i6F74wTHTyy",
+      "name": "khashaiar"
+    },
+    {
+      "id": "3",
+      "email": "hozan@gmail.com",
+      "password": "$2b$10$WGYdyp6zHd2Sx7TwK5ddHe2hng0zJVnkys2flZ499xRYTxpyMG5N2",
+      "name": "hozan"
+    }
+  ],
+  "nextId": 4
+}
