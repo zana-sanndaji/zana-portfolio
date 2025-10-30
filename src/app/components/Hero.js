@@ -7,7 +7,7 @@ export default function Hero() {
         <h1 className="text-4xl font-bold text-gray-800">
           Welcome to My Portfolio
         </h1>
-        <p className="mt-4 text-gray-600">Hi, I'm Zana!</p>
+        <p className="mt-4 text-gray-600">Hi, I&apos;m Zana!</p>
       </div>
     </section>
     

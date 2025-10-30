@@ -34,7 +34,7 @@ export default function AboutPage() {
             className="space-y-6"
           >
             <h1 className="text-5xl font-extrabold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-              Hi, I'm Zana
+              Hi, I&apos;m Zana
             </h1>
             <p className="text-lg text-gray-600 dark:text-gray-300">
               A passionate{" "}
