@@ -310,7 +310,7 @@ export default function Home() {
               {testimonials.map((t, i) => (
                 <div key={i} className="p-6 text-center">
                   <p className="text-lg italic mb-6 text-gray-700 dark:text-gray-300">
-                    "{t.text}"
+                    {t.text}
                   </p>
                   <p className="font-bold text-purple-600 dark:text-purple-400">
                     {t.name}
