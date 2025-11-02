@@ -23,7 +23,7 @@ export default function ContactPage() {
               Get in Touch
             </h1>
             <p className="text-xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
-              Have a project in mind? Let's bring it to life.
+              Have a project in mind? Let&apos;s bring it to life.
             </p>
           </div>
         </ScrollReveal>

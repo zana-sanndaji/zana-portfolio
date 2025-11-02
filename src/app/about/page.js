@@ -24,7 +24,7 @@ export default function AboutPage() {
         <ScrollReveal>
           <div className="text-center mb-16">
             <h1 className="text-5xl md:text-7xl font-black mb-6 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-              Hi, I'm Zana
+              Hi, I&apos;m Zana
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
               Junior JavaScript Developer passionate about building beautiful,
@@ -68,7 +68,7 @@ export default function AboutPage() {
               applications, every line of code teaches me something new.
             </p>
             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-              I'm currently focused on{" "}
+              I&apos;m currently focused on{" "}
               <strong className="text-purple-600 dark:text-purple-400">
                 React, Next.js, and Tailwind CSS
               </strong>{" "}
@@ -81,7 +81,7 @@ export default function AboutPage() {
         <ScrollReveal>
           <div className="text-center">
             <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-6">
-              Let's Connect
+              Let&apos;s Connect
             </h3>
             <div className="flex justify-center gap-4">
               {[
