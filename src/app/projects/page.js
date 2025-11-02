@@ -1,96 +1,92 @@
 // src/app/projects/page.js
-"use client";
+import ScrollReveal from "@/components/ScrollReveal";
+import { Github, ExternalLink, Calendar } from "lucide-react";
 
-import { motion } from "framer-motion";
-import ProjectModal from "@/components/ProjectModal";
-import { useState, useEffect } from "react";
+export const metadata = {
+  title: "Projects | Zana",
+  description: "Portfolio Projects & Works",
+};
 
 export default function ProjectsPage() {
-  const [projects, setProjects] = useState([]);
-  const [selected, setSelected] = useState(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchProjects = async () => {
-      try {
-        const res = await fetch("/api/projects", { cache: "no-store" });
-        const data = await res.json();
-        setProjects(data);
-      } catch (error) {
-        console.error("Failed to fetch projects:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchProjects();
-  }, []);
-
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-4 border-purple-600"></div>
-      </div>
-    );
-  }
+  const projects = [
+    {
+      title: "E-Commerce Platform",
+      desc: "Full-stack online store with React, Node.js, Stripe payments",
+      tech: ["React", "Node.js", "MongoDB", "Stripe"],
+      github: "https://github.com",
+      live: "https://example.com",
+    },
+    {
+      title: "Task Management App",
+      desc: "Real-time collaborative to-do app with drag & drop",
+      tech: ["Next.js", "Firebase", "Tailwind", "Framer Motion"],
+      github: "https://github.com",
+      live: "https://example.com",
+    },
+    {
+      title: "Weather Dashboard",
+      desc: "Beautiful weather app with API integration and animations",
+      tech: ["React", "OpenWeather API", "Chart.js", "Tailwind"],
+      github: "https://github.com",
+      live: "https://example.com",
+    },
+  ];
 
   return (
-    <>
-      <section className="py-20 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-gray-900 dark:to-gray-800">
-        <div className="container mx-auto px-4">
-          <motion.h1
-            initial={{ opacity: 0, y: -30 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-6xl font-extrabold text-center mb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent"
-          >
-            All Projects
-          </motion.h1>
-          <p className="text-center text-gray-600 dark:text-gray-400 mb-16 max-w-2xl mx-auto">
-            Here are some of my favorite works built with modern technologies.
-          </p>
+    <main className="min-h-screen bg-white dark:bg-gray-900 py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <ScrollReveal>
+          <h1 className="text-5xl md:text-6xl font-black text-center mb-16 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+            My Projects
+          </h1>
+        </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
-                onClick={() => setSelected(project)}
-                className="group cursor-pointer bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all"
-              >
-                <div className="h-56 overflow-hidden">
-                  <img
-                    src={project.img}
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project, i) => (
+            <ScrollReveal key={i}>
+              <div className="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 rounded-2xl p-6 shadow-xl border border-gray-200 dark:border-gray-700 hover:shadow-2xl transition-all duration-300">
+                <div className="bg-gray-200 dark:bg-gray-700 border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-xl w-full h-48 mb-6" />
+                <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">
+                  {project.title}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400 mb-4 text-sm">
+                  {project.desc}
+                </p>
+
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.tech.map((t) => (
+                    <span
+                      key={t}
+                      className="px-3 py-1 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 text-xs font-medium text-indigo-600 dark:text-indigo-400 rounded-full border border-indigo-500/20"
+                    >
+                      {t}
+                    </span>
+                  ))}
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-2">
-                    {project.desc}
-                  </p>
-                  <div className="mt-4 flex gap-2">
-                    {project.tags?.map((tag, j) => (
-                      <span
-                        key={j}
-                        className="text-xs px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-300 rounded-full"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
+
+                <div className="flex items-center gap-4 text-sm">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1 text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition"
+                  >
+                    <Github className="w-4 h-4" /> Code
+                  </a>
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1 text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition"
+                  >
+                    <ExternalLink className="w-4 h-4" /> Live
+                  </a>
                 </div>
-              </motion.div>
-            ))}
-          </div>
+              </div>
+            </ScrollReveal>
+          ))}
         </div>
-      </section>
-
-      {selected && (
-        <ProjectModal project={selected} onClose={() => setSelected(null)} />
-      )}
-    </>
+      </div>
+    </main>
   );
 }
