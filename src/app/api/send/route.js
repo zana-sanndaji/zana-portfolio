@@ -1,15 +1,15 @@
 // src/app/api/send/route.js
 import { Resend } from "resend";
 
-// const resend = new Resend(process.env.RESEND_API_KEY); // این خط باید باشه
-const resend = { emails: { send: () => Promise.resolve() } }; // موقت
+const resend = new Resend(process.env.RESEND_API_KEY); // این خط باید باشه
+
 export async function POST(request) {
   const { name, email, message } = await request.json();
 
   try {
     await resend.emails.send({
-      from: "Portfolio <onboarding@resend.dev>",
-      to: "zanaprivate30@gmail.com", // ایمیل خودت
+      from: "Zana Portfolio <contact@resend.dev>", // این آدرس مجاز و رسمیه
+      to: "zana.sanndaji@gmail.com", // ایمیل واقعی خودت
       replyTo: email,
       subject: `New message from ${name}`,
       text: message,
