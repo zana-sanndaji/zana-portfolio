@@ -1,7 +1,7 @@
 // src/app/api/send/route.js
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend(process.env.RESEND_API_KEY); // این خط باید باشه
 
 export async function POST(request) {
   const { name, email, message } = await request.json();
@@ -9,7 +9,7 @@ export async function POST(request) {
   try {
     await resend.emails.send({
       from: "Portfolio <onboarding@resend.dev>",
-      to: "zana@example.com", // ایمیل خودت
+      to: "zanaprivate30@gmail.com", // ایمیل خودت
       replyTo: email,
       subject: `New message from ${name}`,
       text: message,
