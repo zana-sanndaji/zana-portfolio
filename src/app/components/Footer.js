@@ -1,33 +1,21 @@
-import { Github, Linkedin, Mail } from "lucide-react";
+// src/components/Footer.js
+import ViewCounter from "@/components/ViewCounter";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-100 dark:bg-gray-800 py-10 mt-20">
-      <div className="container mx-auto px-4 text-center">
-        <div className="flex justify-center gap-6 mb-6">
-          <a
-            href="#"
-            className="p-3 bg-white dark:bg-gray-700 rounded-full shadow hover:shadow-lg transition-all"
-          >
-            <Github className="w-5 h-5" />
-          </a>
-          <a
-            href="#"
-            className="p-3 bg-white dark:bg-gray-700 rounded-full shadow hover:shadow-lg transition-all"
-          >
-            <Linkedin className="w-5 h-5" />
-          </a>
-          <a
-            href="#"
-            className="p-3 bg-white dark:bg-gray-700 rounded-full shadow hover:shadow-lg transition-all"
-          >
-            <Mail className="w-5 h-5" />
-          </a>
-        </div>
+    <footer className="py-12 text-center border-t border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900/50">
+      <div className="max-w-7xl mx-auto px-4 space-y-3">
+        {/* متن اصلی */}
         <p className="text-sm text-gray-600 dark:text-gray-400">
-          © 2025 Zana. All rights reserved.
+          © 2025 Zana Sanndaji. Built with{" "}
+          <span className="text-red-500">♥</span> + Next.js
         </p>
-        <p className="text-xs mt-1">Built with Next.js & Tailwind CSS</p>
+
+        {/* ViewCounter — حالا درست شده! */}
+        <div className="flex items-center justify-center gap-2 text-xs text-gray-500 dark:text-gray-400">
+          <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+          <ViewCounter />
+        </div>
       </div>
     </footer>
   );

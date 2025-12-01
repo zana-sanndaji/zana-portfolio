@@ -19,6 +19,34 @@ main > section:first-child {
   padding-top: 0 !important;
 }
 
+* {
+  cursor: none !important;
+}
+
+.custom-cursor {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #c084fc;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transition: all 0.1s ease;
+  transform: translate(-50%, -50%);
+}
+
+.custom-cursor::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: #c084fc;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 /* انیمیشن‌ها */
 @layer utilities {
   .animate-gradient-xy {

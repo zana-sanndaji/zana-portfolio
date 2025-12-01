@@ -245,6 +245,49 @@ export default function Home() {
         </section>
       </ScrollReveal>
 
+      {/* ====== ABOUT ME PREVIEW — ساده، جمع‌وجور، عکس چپ، متن راست ====== */}
+      <section className="py-16 px-6">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-10 items-center">
+            {/* عکس — سمت چپ */}
+            <div className="flex justify-center md:justify-start">
+              <img
+                src="/zana-photo.jpg"
+                alt="Zana Sanndaji"
+                className="w-64 h-80 md:w-72 md:h-96 object-cover rounded-2xl shadow-xl border-4 border-gray-200 dark:border-gray-700"
+              />
+            </div>
+
+            {/* متن — سمت راست، ساده و تمیز */}
+            <div className="space-y-5 text-center md:text-left">
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white">
+                Hi, I'm{" "}
+                <span className="text-purple-600 dark:text-purple-400">
+                  Zana
+                </span>
+              </h2>
+
+              <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+                Junior JavaScript Developer passionate about React, Next.js, and
+                building fast, beautiful web apps.
+              </p>
+
+              <p className="text-gray-500 dark:text-gray-500 text-sm">
+                Started coding in 2023 • Always learning • Ready to contribute
+              </p>
+
+              {/* لینک ساده به صفحه About */}
+              <a
+                href="/about"
+                className="inline-block text-purple-600 dark:text-purple-400 font-medium hover:underline"
+              >
+                More about me →
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Skills */}
       <ScrollReveal>
         <section
